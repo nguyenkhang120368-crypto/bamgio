@@ -1,0 +1,6 @@
+{
+  "name": "AstroCube — Bấm Giờ Rubik Vũ Trụ",
+  "description": "Ứng dụng bấm giờ Rubik chuyên nghiệp với nền vũ trụ tùy biến màu sắc, tính toán Ao5, Bo5, Ao12, Mean, quản lý nhiều session và kỷ lục cá nhân.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
