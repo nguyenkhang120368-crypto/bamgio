@@ -1,5 +1,6 @@
 import { Palette } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import { AlgorithmsView } from './components/AlgorithmsView';
 import { AnalyticsView } from './components/AnalyticsView';
 import { RecordsView } from './components/RecordsView';
 import { SessionsView } from './components/SessionsView';
@@ -19,7 +20,7 @@ import { computeSessionStats } from './utils/cubeStats';
 import { generateScramble, PUZZLE_LABELS } from './utils/scrambleGenerator';
 import { playRecordChime } from './utils/sound';
 
-type AppTab = 'timer' | 'analytics' | 'records' | 'sessions';
+type AppTab = 'timer' | 'algorithms' | 'analytics' | 'records' | 'sessions';
 
 const STORAGE_KEYS = {
   sessions: 'astrocube_sessions_v1',
@@ -327,6 +328,7 @@ export default function App() {
 
   const navItems: { id: AppTab; label: string }[] = [
     { id: 'timer', label: 'Bấm giờ' },
+    { id: 'algorithms', label: 'Công thức' },
     { id: 'analytics', label: 'Thống kê' },
     { id: 'records', label: 'Kỷ lục' },
     { id: 'sessions', label: 'Phiên giải' },
@@ -464,6 +466,8 @@ export default function App() {
             </div>
           </div>
         )}
+
+        {activeTab === 'algorithms' && <AlgorithmsView />}
 
         {activeTab === 'analytics' && (
           <AnalyticsView
